@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/usuario/ontologies/2022/0/AsistenteAlDaignostico"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/usuario/ontologies/2022/0/AsistenteAlDaignostico">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ejercicio apuntes</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Bombilla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Componente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diferencial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dispositivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interruptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InterruptorSimple"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conectadoA"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#estado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#luce"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ok"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneTension"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#s3"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Bombilla"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dispositivo"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#luce"/>
+                <Datatype abbreviatedIRI="xsd:boolean"/>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cable"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Componente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#tieneTension"/>
+                <Datatype abbreviatedIRI="xsd:boolean"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diferencial"/>
+        <Class IRI="#Dispositivo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dispositivo"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Componente"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#ok"/>
+                <Datatype abbreviatedIRI="xsd:boolean"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interruptor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dispositivo"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#estado"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InterruptorSimple"/>
+        <Class IRI="#Interruptor"/>
+    </SubClassOf>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estado"/>
+        <NamedIndividual IRI="#s3"/>
+        <Literal>Up</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#conectadoA"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#conectadoA"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#conectadoA"/>
+        <Class IRI="#Componente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#conectadoA"/>
+        <Class IRI="#Componente"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#estado"/>
+        <Class IRI="#Interruptor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#luce"/>
+        <Class IRI="#Bombilla"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ok"/>
+        <Class IRI="#Componente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneTension"/>
+        <Class IRI="#Cable"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#estado"/>
+        <DataOneOf>
+            <Literal>Down</Literal>
+            <Literal>Up</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#luce"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ok"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneTension"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
